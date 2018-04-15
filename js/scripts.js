@@ -19,9 +19,9 @@ var anchovy = { name: "Anchovy", price: 1.00};
 var sausage = { name: "Sausage", price: 1.00};
 var chicken = { name: "Chicken", price: 1.00};
 
-Cost.prototype.fullCost = function () {
-  console.log(this.topping+this.size)
-  return this.topping + " " + this.size;
+Cost.prototype.Cost = function () {
+  console.log(this.topping+this.size+this.price)
+  return this.topping + " " + this.size + " " + this.price;
 }
 
 //user interface logic
@@ -30,6 +30,6 @@ $(document).ready(function(){
     event.preventDefault();
     var inputtedTopping = $("input#topping").val();
     var inputtedSize = $("input#size").val();
-    var newPizza = new Pizza(inputtedTopping, inputtedSize);
+    var newPizza = new Pizza(inputtedTopping, inputtedSize, inputtedCost);
   });
 });
