@@ -1,5 +1,5 @@
 //business logic
-function Pizza(topping, size) {
+function Pizza(topping, size, price) {
   this.topping = topping;
   this.size = size;
   this.price = 0;
@@ -19,10 +19,22 @@ var anchovy = { name: "Anchovy", price: 1.00};
 var sausage = { name: "Sausage", price: 1.00};
 var chicken = { name: "Chicken", price: 1.00};
 
-Cost.prototype.Cost = function () {
-  console.log(this.topping+this.size+this.price)
-  return this.topping + " " + this.size + " " + this.price;
+Pizza.prototype.cost = function () {
+  price.forEach(function(price) {
+    this.price + 1;
+  }
+	return this.price;
 }
+
+console.log("Pepperoni"+ size);
+console.log("Salami"+ size);
+console.log("Artichoke"+ size);
+console.log("hawaiian"+ size);
+console.log("veggie"+ size);
+console.log("Anchovy"+ size);
+console.log("Sausage"+ size);
+console.log("Chicken"+ size);
+
 
 //user interface logic
 $(document).ready(function(){
@@ -30,6 +42,7 @@ $(document).ready(function(){
     event.preventDefault();
     var inputtedTopping = $("input#topping").val();
     var inputtedSize = $("input#size").val();
-    var newPizza = new Pizza(inputtedTopping, inputtedSize, inputtedCost);
+    var newPizza = new Pizza(inputtedTopping, inputtedSize);
+    console.log(newPizza.cost());
   });
 });
